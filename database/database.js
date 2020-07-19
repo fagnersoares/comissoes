@@ -1,9 +1,10 @@
 const Sequelize = require("sequelize");
 
-const connection = new Sequelize("comissoes","root","123456",{
-    host:"localhost",
-    dialect: "mysql",
-    timezone: "-03:00"
+const connection = new Sequelize("comissoes", "root", "123456", {
+  host: "localhost",
+  port: "3306",
+  dialect: "mysql",
+  timezone: "-03:00",
 });
 
 module.exports = connection;
