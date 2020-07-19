@@ -1,0 +1,35 @@
+<%- include ('../partials/header.ejs') %>
+<%- include ('../partials/navbar.ejs') %>
+
+
+<div class="container">
+    <hr>
+    <div class="row">
+       <% comissoes.forEach(comissao=>{ %>
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Fornecedor </h5>                    
+                    <p class="card-text">
+                        Lojas:
+                    </p>
+                    <p class="card-text">
+                        Valor a receber
+                    </p>
+                    <p class="card-text">
+                        Pago:
+                    </p>
+                    
+                    
+                    
+                    <a href="#" class="card-link">Link do card</a>
+                    <a href="#" class="card-link">Outro link</a>
+                </div>
+            </div>
+        </div>
+       <% }) %>              
+    </div>
+
+</div>
+
+<%- include ('../partials/footer.ejs') %>

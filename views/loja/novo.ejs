@@ -1,0 +1,19 @@
+<%- include ('../partials/header.ejs') %>
+<%- include ('../partials/navbar.ejs') %>
+
+<div class="container">
+    <hr>
+    <div class="card">
+        <div class="card-header">
+            <h3>Nova loja</h3>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="/loja/salvar">
+                <label>Loja</label>
+                <input type="text" class="form-control" name="loja" placeholder="Digite aqui o nome da loja">
+                <button class="btn btn-primary" style="margin-top: 1rem;">Salvar</button>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include ('../partials/footer.ejs') %>

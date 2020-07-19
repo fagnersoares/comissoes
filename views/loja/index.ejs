@@ -1,0 +1,36 @@
+<%- include ('../partials/header.ejs') %>
+<%- include ('../partials/navbar.ejs') %>
+
+<body>
+    <div class="container">
+        <hr>
+        <h2>Lojas Cadastradas</h2>
+        <a class="btn btn-success" href="/loja/novo">Cadastrar loja</a>
+        <table class="table table-striped" style="margin-top: 10px !important;">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome da loja</th>
+                    <th>Slug da loja</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%lojas.forEach(loja => { %>
+                    <tr>
+                        <td><%= loja.id%></td>
+                        <td><%= loja.nome_loja%></td>
+                        <td><%= loja.slug%></td>
+                        <td>
+                            <a href="/loja/editar/<%= loja.id%>" class="btn btn-warning">Editar</a>                            
+                        </td>
+                    </tr>
+                <% }) %>
+               
+                
+            </tbody>
+        </table>
+    </div>
+</body>
+
+<%- include ('../partials/footer.ejs') %>

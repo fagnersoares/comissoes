@@ -1,0 +1,52 @@
+<%- include ('../partials/header.ejs') %>
+<%- include ('../partials/navbar.ejs') %>
+
+<body>
+    <div class="container">
+        <hr>
+        <div class="card">
+            <div class="card-header">
+                <h3>Cadastar comissões</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/comissoes/salvar">
+                    <label>Cliente</label>
+                    <select name="clienteId" class="form-control">
+                        <option>selecione</option>
+                        <% clientes.forEach(cliente=>{ %>
+                        <option value="<%= cliente.id%>"><%= cliente.nome_cliente%></option>
+                        <% })%>
+                    </select></br>
+                    <label>Lojas</label>
+                    <select multiple name="lojaId" class="form-control loja">
+                        <% lojas.forEach(loja=>{ %>
+                        <option value="<%= loja.id%>"><%= loja.nome_loja%></option>
+                        <% })%>
+                    </select></br>
+                    <label>Valor da comisao</label>
+                    <input type="text" name="valor" class="form-control valor" readonly></br>
+                    <label>Data do processo</label>
+                    <input type="date" name="data_processo" class="form-control"></br>
+                    
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="pago" disabled>
+                        <label>Pago?</label>
+                    </div>
+                    <button class="btn btn-primary" class="form-control">Salvar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<%- include ('../partials/footer.ejs') %>
+
+<script>
+
+    $('.loja').find('option').click(function () {
+       // alert($(this).val());
+        $(".valor").val($(this).val() * 28);
+    });
+
+</script>

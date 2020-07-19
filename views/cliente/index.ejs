@@ -1,0 +1,36 @@
+<%- include ('../partials/header.ejs') %>
+<%- include ('../partials/navbar.ejs') %>
+
+<body>
+    <div class="container">
+        <hr>
+        <h2>Clientes Cadastradas</h2>
+        <a class="btn btn-success" href="/cliente/novo">Cadastrar loja</a>
+        <table class="table table-striped" style="margin-top: 10px !important;">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome do cliente</th>
+                    <th>Slug do cleinte</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%clientes.forEach(cliente => { %>
+                    <tr>
+                        <td><%= cliente.id%></td>
+                        <td><%= cliente.nome_cliente%></td>
+                        <td><%= cliente.slug%></td>
+                        <td> 
+                            <a href="/cliente/editar/<%= cliente.id%>" class="btn btn-warning">Editar</a>                                                    
+                        </td> 
+                    </tr>
+                <% }) %>
+               
+                
+            </tbody>
+        </table>
+    </div>
+</body>
+
+<%- include ('../partials/footer.ejs') %>
